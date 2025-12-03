@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭翔 - WMS产品经理作品集 | 智能仓储解决方案专家</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== 基础变量和重置 ===== */
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --accent: #f72585;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            
+            --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            --gradient-accent: linear-gradient(135deg, #f72585 0%, #b5179e 100%);
+            --gradient-success: linear-gradient(135deg, #4cc9f0 0%, #4895ef 100%);
+            --gradient-dark: linear-gradient(135deg, #212529 0%, #1a1a2e 100%);
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+            --shadow-primary: 0 4px 20px rgba(67, 97, 238, 0.2);
+            
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --radius-sm: 0.5rem;
+            --radius-md: 1rem;
+            --radius-lg: 1.5rem;
+            --radius-xl: 2rem;
+            --radius-full: 9999px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* ===== 导航栏 ===== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-primary);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* 修改联系我按钮字体为加粗白色 */
+        .nav-cta strong {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* ===== 英雄区域 ===== */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(58, 12, 163, 0.03) 100%);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 30% 0);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-success);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .stat-item:last-child .stat-number {
+                flex-direction: row;
+                justify-content: center;
+                gap: 0.25rem;
+            }
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        /* ===== 通用组件 ===== */
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section.light {
+            background: white;
+        }
+        
+        .section.gray {
+            background: var(--gray-100);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(67, 97, 238, 0.2);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+        
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        /* ===== 新增加的内容板块 ===== */
+        
+        /* 1. 产品分析板块 */
+        .product-analysis {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+        }
+        
+        .analysis-framework {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .analysis-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .analysis-card:nth-child(2) {
+            border-top-color: var(--accent);
+        }
+        
+        .analysis-card:nth-child(3) {
+            border-top-color: var(--success);
+        }
+        
+        .analysis-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .analysis-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .analysis-card:nth-child(2) .analysis-icon {
+            background: rgba(247, 37, 133, 0.1);
+            color: var(--accent);
+        }
+        
+        .analysis-card:nth-child(3) .analysis-icon {
+            background: rgba(76, 201, 240, 0.1);
+            color: var(--success);
+        }
+        
+        /* 2. 竞品分析板块 */
+        .competitor-analysis {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .competitor-table {
+            width: 100%;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 3rem;
+        }
+        
+        .competitor-table th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .competitor-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .competitor-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .feature-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status-good {
+            background: rgba(76, 201, 240, 0.1);
+            color: var(--success);
+        }
+        
+        .status-medium {
+            background: rgba(248, 150, 30, 0.1);
+            color: var(--warning);
+        }
+        
+        .status-bad {
+            background: rgba(247, 37, 133, 0.1);
+            color: var(--accent);
+        }
+        
+        /* 3. 市场与行业调研板块 */
+        .market-research {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+        }
+        
+        .research-findings {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .market-trends {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .trend-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: rgba(67, 97, 238, 0.05);
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .trend-item:nth-child(2) {
+            border-left-color: var(--accent);
+            background: rgba(247, 37, 133, 0.05);
+        }
+        
+        .trend-item:nth-child(3) {
+            border-left-color: var(--success);
+            background: rgba(76, 201, 240, 0.05);
+        }
+        
+        .trend-icon {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+        
+        .market-metrics {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.2);
+        }
+        
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .metric-label {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        /* 4. 用户调研板块 */
+        .user-research {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .persona-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .persona-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .persona-info h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .persona-info p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .pain-points, .needs {
+            margin-top: 1.5rem;
+        }
+        
+        .pain-points h5, .needs h5 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pain-points ul, .needs ul {
+            list-style: none;
+        }
+        
+        .pain-points li, .needs li {
+            padding: 0.5rem 0;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .pain-points li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+        }
+        
+        .needs li::before {
+            content: '✓';
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* 5. 原型设计图板块 */
+        .prototype-design {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+        }
+        
+        .prototype-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .prototype-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .prototype-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .prototype-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prototype-preview::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+        
+        .prototype-info {
+            padding: 1.5rem;
+        }
+        
+        .prototype-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .prototype-desc {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* 6. PRD产品需求文档板块 */
+        .prd-documentation {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .prd-content {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 3rem;
+        }
+        
+        .prd-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+        }
+        
+        .prd-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .prd-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .prd-sections {
+            padding: 2rem;
+        }
+        
+        .prd-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .prd-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .prd-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .prd-section ul {
+            list-style: none;
+            margin-left: 1.5rem;
+        }
+        
+        .prd-section li {
+            padding: 0.5rem 0;
+            color: var(--gray-700);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .prd-section li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* ===== 页脚 ===== */
+        .footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: var(--space-2xl) 0 var(--space-xl);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--space-md);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 1024px) {
+            .analysis-framework,
+            .prototype-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .research-findings,
+            .persona-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .analysis-framework,
+            .prototype-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .competitor-table {
+                font-size: 0.85rem;
+            }
+            
+            .competitor-table th,
+            .competitor-table td {
+                padding: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                郭翔
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#summary">项目摘要</a></li>
+                <li><a href="#product-analysis">产品分析</a></li>
+                <li><a href="#competitor-analysis">竞品分析</a></li>
+                <li><a href="#market-research">市场调研</a></li>
+                <li><a href="#user-research">用户调研</a></li>
+                <li><a href="#prototype-design">原型设计</a></li>
+                <li><a href="#prd-documentation">PRD文档</a></li>
+                <li><a href="#contact" class="nav-cta"><strong>联系我</strong></a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> WMS产品专家
+                </div>
+                <h1>智能仓储解决方案专家</h1>
+                <p class="hero-subtitle">
+                    3年SaaS产品经验，专注WMS系统设计与优化。通过数据驱动的产品设计，为企业提供高效的仓储管理解决方案。
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">效率提升</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20%</div>
+                        <div class="stat-label">空间优化</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">错误降低</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <span>3</span><span>年</span>
+                        </div>
+                        <div class="stat-label">行业经验</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目摘要 -->
+    <section class="section light" id="summary">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">核心项目</div>
+                <h2 class="section-title">WMS上架策略优化</h2>
+                <p class="section-subtitle">
+                    通过数据驱动的ABC分类法与智能推荐算法，实现上架效率提升35%，仓库空间利用率提升20%
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>问题洞察</h3>
+                    <p>旧有上架策略依赖人工经验，导致库位混乱、空间浪费、拣货路径长，严重影响仓储效率。</p>
+                </div>
+                
+                <div class="card">
+                    <h3>解决方案</h3>
+                    <p>引入ABC分类法，结合实时数据与智能算法，为每件商品推荐最优库位，实现自动化上架决策。</p>
+                </div>
+                
+                <div class="card">
+                    <h3>项目成果</h3>
+                    <p>上架效率提升35%，空间利用率提高20%，错误率降至0.2%，系统容量提升80%。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品分析板块 -->
+    <section class="product-analysis" id="product-analysis">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">产品分析</div>
+                <h2 class="section-title">WMS产品深度分析</h2>
+                <p class="section-subtitle">
+                    基于SWOT分析与产品生命周期理论，制定科学的产品策略
+                </p>
+            </div>
+            
+            <div class="analysis-framework">
+                <div class="analysis-card">
+                    <div class="analysis-icon">
+                        <i class="fas fa-street-view"></i>
+                    </div>
+                    <h3>SWOT分析</h3>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>优势：</strong>算法优化能力、行业经验积累</p>
+                        <p><strong>劣势：</strong>品牌知名度、资源限制</p>
+                        <p><strong>机会：</strong>数字化转型需求、SaaS化趋势</p>
+                        <p><strong>威胁：</strong>巨头入场、技术快速迭代</p>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>产品生命周期</h3>
+                    <p style="margin-top: 1rem;">
+                        <strong>阶段：</strong>成长期 → 成熟期<br>
+                        <strong>策略：</strong>功能完善、用户体验优化<br>
+                        <strong>重点：</strong>客户留存、市场扩张<br>
+                        <strong>目标：</strong>提升产品粘性与复购率
+                    </p>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>产品定位</h3>
+                    <p style="margin-top: 1rem;">
+                        <strong>目标用户：</strong>中小型电商企业、第三方物流<br>
+                        <strong>核心价值：</strong>降低仓储成本、提升作业效率<br>
+                        <strong>差异化：</strong>智能算法推荐、快速部署<br>
+                        <strong>定价策略：</strong>SaaS订阅制，按需付费
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 竞品分析板块 -->
+    <section class="competitor-analysis" id="competitor-analysis">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">竞品分析</div>
+                <h2 class="section-title">主流WMS产品功能对比</h2>
+                <p class="section-subtitle">
+                    基于功能完备性、用户体验、定价策略的多维度分析
+                </p>
+            </div>
+            
+            <table class="competitor-table">
+                <thead>
+                    <tr>
+                        <th>功能模块</th>
+                        <th>我司产品</th>
+                        <th>富勒WMS</th>
+                        <th>科箭WMS</th>
+                        <th>鲸仓WMS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>智能上架策略</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                    </tr>
+                    <tr>
+                        <td>动态质检引擎</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-good">良好</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                        <td><span class="feature-status status-bad">基础</span></td>
+                    </tr>
+                    <tr>
+                        <td>SaaS多租户</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-bad">本地部署为主</span></td>
+                    </tr>
+                    <tr>
+                        <td>移动端PDA支持</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-good">良好</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                    </tr>
+                    <tr>
+                        <td>实时数据看板</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-good">良好</span></td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-bad">基础</span></td>
+                    </tr>
+                    <tr>
+                        <td>API开放程度</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-bad">有限</span></td>
+                    </tr>
+                    <tr>
+                        <td>实施部署速度</td>
+                        <td><span class="feature-status status-good">优秀</span></td>
+                        <td><span class="feature-status status-medium">中等</span></td>
+                        <td><span class="feature-status status-good">良好</span></td>
+                        <td><span class="feature-status status-bad">周期长</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(67, 97, 238, 0.05); border-radius: 0.75rem;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">关键发现与策略建议</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                    <div>
+                        <strong>竞争优势：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">算法智能化程度高，SaaS架构先进，部署速度快</p>
+                    </div>
+                    <div>
+                        <strong>市场机会：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">中小企业对快速部署、低成本的SaaS WMS需求旺盛</p>
+                    </div>
+                    <div>
+                        <strong>改进方向：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">加强行业解决方案，提升大型企业定制能力</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 市场与行业调研板块 -->
+    <section class="market-research" id="market-research">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">市场调研</div>
+                <h2 class="section-title">WMS行业趋势洞察</h2>
+                <p class="section-subtitle">
+                    基于200+企业调研与行业报告分析的市场机会识别
+                </p>
+            </div>
+            
+            <div class="research-findings">
+                <div class="market-trends">
+                    <h3 style="margin-bottom: 1.5rem;">关键行业趋势</h3>
+                    
+                    <div class="trend-item">
+                        <div class="trend-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">智能化升级加速</h4>
+                            <p style="color: var(--gray-600); font-size: 0.95rem;">AI预测、机器人拣选、数字孪生等新技术在仓储领域的应用普及率年增长40%+</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trend-item">
+                        <div class="trend-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">SaaS化转型趋势</h4>
+                            <p style="color: var(--gray-600); font-size: 0.95rem;">70%的中小企业更倾向选择SaaS WMS，相比传统部署节省60%的初始投入</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trend-item">
+                        <div class="trend-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">系统集成需求增强</h4>
+                            <p style="color: var(--gray-600); font-size: 0.95rem;">企业需求从单一WMS转向与ERP、TMS、OMS打通的完整供应链解决方案</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="market-metrics">
+                    <h3 style="color: white; margin-bottom: 2rem;">关键市场数据</h3>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div class="metric-value">¥150亿</div>
+                        <div class="metric-label">2024年中国WMS市场规模</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">年复合增长率</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <div class="metric-value">65%</div>
+                        <div class="metric-label">中小企业数字化渗透率</div>
+                    </div>
+                    
+                    <div>
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">SaaS模式占比</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户调研板块 -->
+    <section class="user-research" id="user-research">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">用户调研</div>
+                <h2 class="section-title">目标用户深度洞察</h2>
+                <p class="section-subtitle">
+                    基于20+深度访谈与100+问卷调查的用户画像构建
+                </p>
+            </div>
+            
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="persona-info">
+                            <h4>李明 | 仓储经理</h4>
+                            <p>35岁，10年仓储管理经验</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pain-points">
+                        <h5>核心痛点</h5>
+                        <ul>
+                            <li>人工盘点效率低，错误率高</li>
+                            <li>新员工培训成本高，上手慢</li>
+                            <li>库存准确率难以保证</li>
+                            <li>作业效率无法量化评估</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="needs">
+                        <h5>核心需求</h5>
+                        <ul>
+                            <li>系统操作简单，降低学习成本</li>
+                            <li>实时库存数据，支持快速决策</li>
+                            <li>自动化报表生成，减少人工统计</li>
+                            <li>移动端支持，随时随地查看</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-avatar">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <div class="persona-info">
+                            <h4>王芳 | 系统管理员</h4>
+                            <p>28岁，3年IT系统管理经验</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pain-points">
+                        <h5>核心痛点</h5>
+                        <ul>
+                            <li>系统集成复杂，维护困难</li>
+                            <li>数据迁移风险大</li>
+                            <li>用户权限管理繁琐</li>
+                            <li>系统稳定性问题排查困难</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="needs">
+                        <h5>核心需求</h5>
+                        <ul>
+                            <li>清晰的系统架构文档</li>
+                            <li>完善的数据备份恢复机制</li>
+                            <li>灵活的权限配置系统</li>
+                            <li>详细的系统日志和监控</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 2rem; background: rgba(67, 97, 238, 0.05); border-radius: 1rem;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">用户调研关键发现</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div>
+                        <strong>优先级最高：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">操作简便性 > 功能完备性</p>
+                    </div>
+                    <div>
+                        <strong>最大痛点：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">数据准确性难以保障</p>
+                    </div>
+                    <div>
+                        <strong>付费意愿：</strong>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">效率提升20%即愿意付费</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 原型设计图板块 -->
+    <section class="prototype-design" id="prototype-design">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">原型设计</div>
+                <h2 class="section-title">产品界面原型展示</h2>
+                <p class="section-subtitle">
+                    基于Axure/Figma设计的高保真原型，体现用户体验设计思考
+                </p>
+            </div>
+            
+            <div class="prototype-showcase">
+                <div class="prototype-card">
+                    <div class="prototype-preview">
+                        上架策略配置界面
+                    </div>
+                    <div class="prototype-info">
+                        <div class="prototype-title">策略配置后台</div>
+                        <p class="prototype-desc">ABC分类阈值设置、库位映射规则配置、算法参数调整等核心功能界面设计</p>
+                    </div>
+                </div>
+                
+                <div class="prototype-card">
+                    <div class="prototype-preview">
+                        PDA操作界面
+                    </div>
+                    <div class="prototype-info">
+                        <div class="prototype-title">移动端PDA界面</div>
+                        <p class="prototype-desc">上架任务接收、库位推荐展示、异常处理等移动端操作流程设计</p>
+                    </div>
+                </div>
+                
+                <div class="prototype-card">
+                    <div class="prototype-preview">
+                        数据看板界面
+                    </div>
+                    <div class="prototype-info">
+                        <div class="prototype-title">实时数据看板</div>
+                        <p class="prototype-desc">仓库作业效率、空间利用率、错误率等关键指标的可视化监控界面</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <p style="color: var(--gray-600); font-style: italic;">
+                    注：所有原型设计均遵循"简洁、高效、易用"的设计原则，通过用户测试验证可用性
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRD产品需求文档板块 -->
+    <section class="prd-documentation" id="prd-documentation">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">产品文档</div>
+                <h2 class="section-title">PRD产品需求文档节选</h2>
+                <p class="section-subtitle">
+                    完整的产品需求文档展现产品经理的系统化思维与文档能力
+                </p>
+            </div>
+            
+            <div class="prd-content">
+                <div class="prd-header">
+                    <h3>WMS上架策略优化模块PRD</h3>
+                    <div class="prd-meta">
+                        <span>版本：V2.0</span>
+                        <span>日期：2024.11</span>
+                        <span>作者：郭翔</span>
+                    </div>
+                </div>
+                
+                <div class="prd-sections">
+                    <div class="prd-section">
+                        <h4>1. 项目背景与目标</h4>
+                        <ul>
+                            <li><strong>业务背景：</strong>电商业务快速增长，原有上架策略效率低下</li>
+                            <li><strong>核心问题：</strong>人工决策错误率高，仓库空间利用率低</li>
+                            <li><strong>项目目标：</strong>提升上架效率35%，提高空间利用率20%</li>
+                            <li><strong>成功指标：</strong>上架错误率降至0.2%以下，系统容量提升80%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="prd-section">
+                        <h4>2. 功能需求详述</h4>
+                        <ul>
+                            <li><strong>ABC分类管理：</strong>支持按周转率自动分类，支持人工调整</li>
+                            <li><strong>智能库位推荐：</strong>基于多维度算法推荐最优库位</li>
+                            <li><strong>策略配置后台：</strong>可视化配置界面，支持实时生效</li>
+                            <li><strong>数据监控看板：</strong>实时展示策略效果与优化建议</li>
+                            <li><strong>异常处理机制：</strong>推荐异常预警与人工干预流程</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="prd-section">
+                        <h4>3. 业务流程设计</h4>
+                        <ul>
+                            <li><strong>数据采集：</strong>SKU历史数据拉取 → 周转率计算 → ABC分类</li>
+                            <li><strong>策略执行：</strong>上架任务生成 → 智能推荐 → PDA展示 → 人工确认</li>
+                            <li><strong>效果反馈：</strong>执行数据收集 → 效果分析 → 策略优化</li>
+                            <li><strong>异常处理：</strong>异常检测 → 原因分析 → 策略调整 → 重新推荐</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="prd-section">
+                        <h4>4. 数据需求与接口</h4>
+                        <ul>
+                            <li><strong>输入数据：</strong>SKU基础信息、历史出入库数据、库位状态</li>
+                            <li><strong>输出数据：</strong>推荐库位、策略执行效果、优化建议</li>
+                            <li><strong>接口需求：</strong>与库存模块、任务模块、移动端的数据交互接口</li>
+                            <li><strong>性能要求：</strong>推荐响应时间＜1秒，支持1000+并发</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <p style="color: var(--gray-600);">
+                    <i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>
+                    完整PRD文档（25页）可联系获取
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>郭翔 | WMS产品经理</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-top: 1rem;">
+                        专注智能仓储解决方案，通过数据驱动产品设计，为企业提供高效的WMS系统优化服务。
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:gx17720291124@163.com" class="social-link" title="发送邮件">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:17720291124" class="social-link" title="拨打电话">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" title="下载简历">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系信息</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>gx17720291124@163.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>17720291124</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>意向城市：武汉、深圳</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>期望岗位：产品经理</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>核心技能</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">WMS架构设计</span>
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">产品规划</span>
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">数据分析</span>
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">SaaS产品</span>
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">用户研究</span>
+                        <span style="background: rgba(255, 255, 255, 0.1); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">竞品分析</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 郭翔 - WMS产品经理作品集 | 基于真实项目经历制作</p>
+                <p style="margin-top: 0.5rem;">最后更新: 2024年11月 | 本作品集仅用于求职展示</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单控制
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            mobileMenuBtn.innerHTML = navLinks.style.display === 'flex' 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // 响应式调整
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 移动端关闭菜单
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 卡片悬停效果增强
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
